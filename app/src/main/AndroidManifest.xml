@@ -15,6 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity_goals" />
+        <activity android:name=".activity_schedule" />
+        <activity android:name=".activity_graphs" />
+        <activity android:name=".activity_exercise" />
     </application>
 
 </manifest>
