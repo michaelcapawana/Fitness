@@ -41,4 +41,11 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
+    public void callSettings(View view) {
+        Intent intent = new Intent(this, activity_settings.class);
+        String message = "Settings";
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
 }

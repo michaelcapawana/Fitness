@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/button2"
         android:onClick="callSchedule"
-        android:layout_marginTop="71dp"
+        android:layout_marginTop="45dp"
         android:layout_below="@+id/button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/button3"
         android:onClick="callExercise"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="46dp"
         android:layout_below="@+id/button2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -49,7 +49,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/button4"
         android:onClick="callGraphs"
-        android:layout_marginBottom="55dp"
+        android:layout_above="@+id/button5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="38dp" />
+
+    <Button
+        android:text="Settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:id="@+id/button5"
+        android:onClick="callSettings"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
