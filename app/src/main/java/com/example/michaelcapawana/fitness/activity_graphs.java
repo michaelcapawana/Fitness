@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.Calendar;
 
 public class activity_graphs extends AppCompatActivity {
@@ -20,7 +23,6 @@ public class activity_graphs extends AppCompatActivity {
     public void BMI(View view) {
         BMI_Date_Data bmiData [];
         BMI_Date_Data BMIObject = new BMI_Date_Data();
-        BMI_Date_Data BMINull = new BMI_Date_Data();
         SharedPreferences profile = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences bmiFile = getSharedPreferences("bmi", MODE_PRIVATE);
         SharedPreferences.Editor editor = bmiFile.edit();
@@ -28,9 +30,10 @@ public class activity_graphs extends AppCompatActivity {
         long height = profile.getInt("Height", 0);
         int size =  bmiFile.getInt("array_size", 0);
         bmiData = new BMI_Date_Data[size];
-        for(int i=0; i < size; i++)
-            bmiFile.getAll();
-        if (bmiData) {
+        for(int i=0; i < size; i++) {
+
+            String jsonInStrong = bmiData["array_" + i, i]
+            bmiData = gson.fromJson()
 
         }
         BMIObject.setBmi((weight/((height)*(height)) * 703));
@@ -41,10 +44,14 @@ public class activity_graphs extends AppCompatActivity {
         int day = rightnow.getTime().getDate();
         //Log.d("Date", String.valueOf(day));
 
-        editor.putInt("array_size", bmiData.length);
+       /* editor.putInt("array_size", bmiData.length);
         for(int i=0;i < bmiData; i++)
             editor.putString("array_" + i, bmiData[i]);
-        editor.commit();
+        editor.commit();*/
+
+        GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+        Log.d("Turtles", gson.toJson(bmiData[0]));
     }
 
     public void GenerateGraph() {
