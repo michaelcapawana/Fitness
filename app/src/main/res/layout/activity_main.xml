@@ -55,12 +55,12 @@
         android:layout_marginBottom="38dp" />
 
     <Button
-        android:text="Settings"
+        android:text="UserInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
         android:id="@+id/button5"
-        android:onClick="callSettings"
+        android:onClick="callUserInfo"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

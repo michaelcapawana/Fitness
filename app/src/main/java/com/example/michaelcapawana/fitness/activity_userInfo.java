@@ -3,11 +3,11 @@ package com.example.michaelcapawana.fitness;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class activity_settings extends AppCompatActivity {
+public class activity_userInfo extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_user_info);
     }
 }

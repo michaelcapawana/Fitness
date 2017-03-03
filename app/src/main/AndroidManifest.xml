@@ -19,6 +19,7 @@
         <activity android:name=".activity_schedule" />
         <activity android:name=".activity_graphs" />
         <activity android:name=".activity_exercise" />
+        <activity android:name=".activity_userInfo"></activity>
     </application>
 
 </manifest>
