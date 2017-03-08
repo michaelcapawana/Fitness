@@ -10,6 +10,17 @@ public class BMI_Date_Data {
     int month = 0;
     int day = 0;
 
+
+    public BMI_Date_Data() {
+    }
+
+    public BMI_Date_Data(long bmi, int year, int month, int day) {
+        this.bmi = bmi;
+        this.year = year;
+        this.month = month;
+        this.day = day;
+    }
+
     public long getBmi() {
         return bmi;
     }

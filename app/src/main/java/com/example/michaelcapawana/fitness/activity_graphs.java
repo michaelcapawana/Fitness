@@ -30,28 +30,25 @@ public class activity_graphs extends AppCompatActivity {
         long height = profile.getInt("Height", 0);
         int size =  bmiFile.getInt("array_size", 0);
         bmiData = new BMI_Date_Data[size];
-        for(int i=0; i < size; i++) {
-
-            String jsonInStrong = bmiData["array_" + i, i]
-            bmiData = gson.fromJson()
-
+        /*if (bmiFile.json) {
+            String bmiJSon = bmiFile.json;
+            Gson gson = new Gson();
+            BMI_Date_Data[] bmiArray = gson.fromJson(bmiJson, BMI_Date_Data[].class);
         }
-        BMIObject.setBmi((weight/((height)*(height)) * 703));
-        Log.d("Graphs", String.valueOf(bmi));
+        else*/
+        long height2 = (height*height);
+        BMIObject.setBmi(((weight*703)/height2));
         Calendar rightnow = Calendar.getInstance();
-        int month = rightnow.getTime().getMonth(); //Months are 0-11
+        BMIObject.setMonth(rightnow.getTime().getMonth()); //Months are 0-11
         //Log.d("Date", String.valueOf(month));
-        int day = rightnow.getTime().getDate();
+        BMIObject.setDay(rightnow.getTime().getDate());
         //Log.d("Date", String.valueOf(day));
+        BMIObject.setYear(rightnow.getTime().getYear());
+        BMI_Date_Data[] bmiArray = {new BMI_Date_Data(BMIObject.bmi, BMIObject.getYear(), BMIObject.getMonth(), BMIObject.getDay())};
+        String jsonString = new Gson().toJson(bmiArray);
+        Log.d("Json Value: ", jsonString);
 
-       /* editor.putInt("array_size", bmiData.length);
-        for(int i=0;i < bmiData; i++)
-            editor.putString("array_" + i, bmiData[i]);
-        editor.commit();*/
-
-        GsonBuilder builder = new GsonBuilder();
-        Gson gson = builder.create();
-        Log.d("Turtles", gson.toJson(bmiData[0]));
+        //push into array as string and make sure that reading it out works.
     }
 
     public void GenerateGraph() {
