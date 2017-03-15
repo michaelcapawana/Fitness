@@ -1,7 +1,13 @@
 package com.example.michaelcapawana.fitness.goalsdb;
 
 /**
- * Created by michaelcapawana on 2/27/17.
+ * Creates the data base for the to-do list storage associated with activity_goals.
+ * @author Grey Winert
+ * @author Preston Gagnon
+ * @author Michael Capawana
+ * @version 1.0
+ * @since 1.0
+ *
  */
 
 import android.provider.BaseColumns;

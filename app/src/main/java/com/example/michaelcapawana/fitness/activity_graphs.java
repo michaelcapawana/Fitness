@@ -41,9 +41,9 @@ public class activity_graphs extends AppCompatActivity {
         long height = profile.getInt("Height", 0);
         int size =  bmiFile.getInt("array_size", 0);
         bmiData = new String[size];
-        if (bmiFile.getString("json", )) {
-            String bmiJSon = bmiFile.getString("json", 0);
-            String bmiArray = gson.fromJson(bmiJson, BMI_Date_Data[].class);
+        if (bmiFile.contains("json")) {
+            String bmiJSon = bmiFile.getString("json", "");
+            bmiData = gson.fromJson(bmiJson, BMI_Date_Data[].class);
         }
 
         long height2 = (height*height);

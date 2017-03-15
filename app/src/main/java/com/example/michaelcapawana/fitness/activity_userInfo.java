@@ -1,5 +1,15 @@
 package com.example.michaelcapawana.fitness;
 
+/**
+ * Saves the user info as a shared preference.
+ * @author Grey Winert
+ * @author Preston Gagnon
+ * @author Michael Capawana
+ * @version 1.0
+ * @since 1.0
+ *
+ */
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;

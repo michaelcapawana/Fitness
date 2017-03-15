@@ -1,8 +1,15 @@
 package com.example.michaelcapawana.fitness.goalsdb;
 
 /**
- * Created by michaelcapawana on 2/27/17.
+ * Helps store the data in the to-do list associated with activity_goals.
+ * @author Grey Winert
+ * @author Preston Gagnon
+ * @author Michael Capawana
+ * @version 1.0
+ * @since 1.0
+ *
  */
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;

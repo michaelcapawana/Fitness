@@ -1,7 +1,13 @@
 package com.example.michaelcapawana.fitness;
 
 /**
- * Created by michaelcapawana on 3/3/17.
+ * Returns the data necessary for the BMI Graph: bmi, day, month, and year.
+ * @author Grey Winert
+ * @author Preston Gagnon
+ * @author Michael Capawana
+ * @version 1.0
+ * @since 1.0
+ *
  */
 
 public class BMI_Date_Data {

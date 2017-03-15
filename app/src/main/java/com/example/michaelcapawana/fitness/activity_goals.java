@@ -1,5 +1,14 @@
 package com.example.michaelcapawana.fitness;
 
+/**
+ * Stores user goals in a list format, displays the screen.
+ * @author Grey Winert
+ * @author Preston Gagnon
+ * @author Michael Capawana
+ * @version 1.0
+ * @since 1.0
+ *
+ */
 import android.support.v7.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
