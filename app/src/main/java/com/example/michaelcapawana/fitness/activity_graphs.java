@@ -17,9 +17,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class activity_graphs extends AppCompatActivity {
@@ -31,37 +35,61 @@ public class activity_graphs extends AppCompatActivity {
     }
 
     public void BMI(View view) {
-        String bmiData [];
-        BMI_Date_Data BMIObject = new BMI_Date_Data();
+        ArrayList<BMI_Date_Data> bmiList = new ArrayList<>();
         Gson gson = new Gson();
+        Type listType = new TypeToken<ArrayList<BMI_Date_Data>>(){}.getType();
         SharedPreferences profile = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences bmiFile = getSharedPreferences("bmi", MODE_PRIVATE);
         SharedPreferences.Editor editor = bmiFile.edit();
+        SharedPreferences.Editor profEdit = profile.edit();
         long weight = profile.getInt("Weight", 0);
         long height = profile.getInt("Height", 0);
-        int size =  bmiFile.getInt("array_size", 0);
-        bmiData = new String[size];
-        if (bmiFile.contains("json")) {
-            String bmiJSon = bmiFile.getString("json", "");
-            bmiData = gson.fromJson(bmiJson, BMI_Date_Data[].class);
+        long height2 = (height * height);
+        EditText editText = (EditText) findViewById(R.id.editText2);
+        if (profile.getBoolean("Initialized", false) == true) {
+            Log.d("test", Boolean.toString(bmiFile.getBoolean("Initialized", false)));
+            if (bmiFile.contains("jsonArray")) {
+                String bmiJSon = bmiFile.getString("jsonArray", "");
+                bmiList = gson.fromJson(bmiJSon, new TypeToken<ArrayList<BMI_Date_Data>>(){}.getType());
+
+                weight = Integer.parseInt(editText.getText().toString());
+
+            }
+            editor.remove("jsonArray");
+        }
+        BMI_Date_Data arrayObject = storeData(weight, height2, bmiList);
+        if (bmiList.size() > 0) {
+            BMI_Date_Data temp = bmiList.get(bmiList.size() - 1);
+            if ((arrayObject.getDay() == temp.getDay()) && (arrayObject.getMonth() == temp.getMonth()) && (arrayObject.getYear() == temp.getYear())) {
+                Log.d("if", "inside");
+                bmiList.set(bmiList.size() - 1, arrayObject);
+            } else {
+                Log.d("else", "inside");
+                bmiList.add(arrayObject);
+            }
+        }
+        else {
+            bmiList.add(arrayObject);
+        }
+        String jsonArray = gson.toJson(bmiList);
+        editor.putString("jsonArray", jsonArray);
+        profEdit.putBoolean("Initialized", true);
+        profEdit.commit();
+        editor.commit();
+        for (int i = 0; i < bmiList.size(); i++) {
+            Log.d("Works", bmiList.get(i).display()); //make a display method;
+            }
         }
 
-        long height2 = (height*height);
-        BMIObject.setBmi(((weight*703)/height2));
+    public BMI_Date_Data storeData(long weight, long height, ArrayList<BMI_Date_Data> bmiList) {
+        BMI_Date_Data BMIObject = new BMI_Date_Data();
+        BMIObject.setBmi(((weight * 703) / height));
         Calendar rightnow = Calendar.getInstance();
         BMIObject.setMonth(rightnow.getTime().getMonth()); //Months are 0-11
-        //Log.d("Date", String.valueOf(month));
         BMIObject.setDay(rightnow.getTime().getDate());
-        //Log.d("Date", String.valueOf(day));
         BMIObject.setYear(rightnow.getTime().getYear());
-        BMI_Date_Data[] bmiArray = {new BMI_Date_Data(BMIObject.bmi, BMIObject.getYear(), BMIObject.getMonth(), BMIObject.getDay())};
-        String jsonString = new Gson().toJson(bmiArray);
-        bmiData[bmiFile.getInt("array_size", size)] =  jsonString;
-        Log.d("Json Value: ", jsonString);
-        String jsonArray = gson.toJson(bmiData);
-        editor.putString("jsonArray",jsonArray);
-        //push into array as string and make sure that reading it out works.
-
+        //BMI_Date_Data[] bmiArray = {new BMI_Date_Data(BMIObject.bmi, BMIObject.getYear(), BMIObject.getMonth(), BMIObject.getDay())};
+        return BMIObject;
     }
 
     public void GenerateGraph() {

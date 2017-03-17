@@ -22,9 +22,9 @@ public class BMI_Date_Data {
 
     public BMI_Date_Data(long bmi, int year, int month, int day) {
         this.bmi = bmi;
-        this.year = year;
-        this.month = month;
         this.day = day;
+        this.month = month;
+        this.year = year;
     }
 
     public long getBmi() {
@@ -57,6 +57,10 @@ public class BMI_Date_Data {
 
     public void setDay(int day) {
         this.day = day;
+    }
+
+    public String display() {
+        return "BMI: " + bmi + "DAY: " + day + "MONTH: " + month + "YEAR: " + year;
     }
 
 }

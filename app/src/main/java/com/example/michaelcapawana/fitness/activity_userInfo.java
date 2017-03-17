@@ -49,10 +49,12 @@ public class activity_userInfo extends AppCompatActivity {
         editor.putInt("Height", Integer.parseInt(editText3.getText().toString()));
         editor.putInt("Weight", Integer.parseInt(editText4.getText().toString()));
         editor.putString("Gender", editText5.getText().toString());
+        editor.putBoolean("Initialized", false);
         editor.commit();
         Log.d("UserInfo", "Saved!");
         String name = profile.getString("Name", "");
         Log.d("UserInfo", name);
+        Log.d("Initialized?", Boolean.toString(profile.getBoolean("Initialized", false)));
     }
 
 }
