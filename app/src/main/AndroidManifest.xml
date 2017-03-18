@@ -21,7 +21,8 @@
         <activity android:name=".activity_exercise" />
         <activity android:name=".activity_userInfo" />
         <activity android:name=".cardio" />
-        <activity android:name=".activity_core"></activity>
+        <activity android:name=".activity_core" />
+        <activity android:name=".activity_graph_view"></activity>
     </application>
 
 </manifest>

@@ -11,6 +11,7 @@ package com.example.michaelcapawana.fitness;
  *
  */
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -37,7 +38,6 @@ public class activity_graphs extends AppCompatActivity {
     public void BMI(View view) {
         ArrayList<BMI_Date_Data> bmiList = new ArrayList<>();
         Gson gson = new Gson();
-        Type listType = new TypeToken<ArrayList<BMI_Date_Data>>(){}.getType();
         SharedPreferences profile = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences bmiFile = getSharedPreferences("bmi", MODE_PRIVATE);
         SharedPreferences.Editor editor = bmiFile.edit();
@@ -51,7 +51,6 @@ public class activity_graphs extends AppCompatActivity {
             if (bmiFile.contains("jsonArray")) {
                 String bmiJSon = bmiFile.getString("jsonArray", "");
                 bmiList = gson.fromJson(bmiJSon, new TypeToken<ArrayList<BMI_Date_Data>>(){}.getType());
-
                 weight = Integer.parseInt(editText.getText().toString());
 
             }
@@ -74,6 +73,7 @@ public class activity_graphs extends AppCompatActivity {
         String jsonArray = gson.toJson(bmiList);
         editor.putString("jsonArray", jsonArray);
         profEdit.putBoolean("Initialized", true);
+        profEdit.putString("jsonArray", jsonArray);
         profEdit.commit();
         editor.commit();
         for (int i = 0; i < bmiList.size(); i++) {
@@ -88,11 +88,12 @@ public class activity_graphs extends AppCompatActivity {
         BMIObject.setMonth(rightnow.getTime().getMonth()); //Months are 0-11
         BMIObject.setDay(rightnow.getTime().getDate());
         BMIObject.setYear(rightnow.getTime().getYear());
-        //BMI_Date_Data[] bmiArray = {new BMI_Date_Data(BMIObject.bmi, BMIObject.getYear(), BMIObject.getMonth(), BMIObject.getDay())};
         return BMIObject;
     }
 
-    public void GenerateGraph() {
-
+    public void callGraph(View view) {
+        Log.d("booty", "call");
+        Intent intent = new Intent(this, activity_graph_view.class);
+        startActivity(intent);
     }
 }
