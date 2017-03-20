@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -22,17 +23,23 @@ public class activity_graph_view extends AppCompatActivity {
         GraphView graph = (GraphView) findViewById(R.id.graph);
         SharedPreferences profile = PreferenceManager.getDefaultSharedPreferences(this);
         Gson gson = new Gson();
-        ArrayList<BMI_Date_Data> bmiList = new ArrayList<>();
+        ArrayList<BMI_Date_Data> bmiList = new ArrayList();
         String bmiJSon = profile.getString("jsonArray", "");
         bmiList = gson.fromJson(bmiJSon, new TypeToken<ArrayList<BMI_Date_Data>>(){}.getType());
+        Log.d("size", Integer.toString(bmiList.size()));
         if(bmiList.size() > 0) {
-            LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[]{
-            //for (int i = 0; i < bmiList.size(); i++) {
-            //    new DataPoint(0, bmiList.get(0).getBmi()),
-            //}
-            });
+            Log.d("inIf", "yes");
+            DataPoint[] data = new DataPoint[bmiList.size()];
+            Log.d("init", "yes");
+            for (int i = 0; i < bmiList.size(); i++) {
+                Log.d("inLoop", Integer.toString(i));
+                data[i] = new DataPoint(i, bmiList.get(i).getBmi());
+            }
+            Log.d("aftLoop", "yes");
+            LineGraphSeries<DataPoint> series = new LineGraphSeries<>(data);
+            Log.d("initSeries", "yes");
+            graph.addSeries(series);
         }
-        //graph.addSeries(series);
     }
 
 }

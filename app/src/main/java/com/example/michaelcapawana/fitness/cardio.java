@@ -16,8 +16,19 @@ public class cardio extends AppCompatActivity {
     }
 
     protected void upClick(View view){
-        Log.d("ID Test: ", view.getTag().toString());
-        //TextView tempText = (TextView) findViewById(Integer.parseInt(view.getTag().toString()));
+        Log.d("temp", "Test0");
+        Log.d("showTag", view.getTag().toString());
+        //int tempInt = Integer.parseInt(view.getTag().toString());
+        //Log.d("name", Integer.toString(tempInt));
+        TextView tempText = (TextView) findViewById(R.id.textView14);
+        /*Log.d("temp", "Test1");
+        String temp = tempText.getText().toString();
+        Log.d("temp", "Test2");
+
+        int tempInt = Integer.parseInt(temp);
+        Log.d("tempInt", String.valueOf(tempInt));
+        tempInt++;
+        tempText.setText(String.valueOf(tempInt));*/
 
     }
 }

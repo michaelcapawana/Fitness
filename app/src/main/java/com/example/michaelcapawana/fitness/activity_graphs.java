@@ -33,6 +33,7 @@ public class activity_graphs extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graphs);
+        Log.d("Graphs!", "Graph");
     }
 
     public void BMI(View view) {
