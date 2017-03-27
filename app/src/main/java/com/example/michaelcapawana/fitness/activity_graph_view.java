@@ -9,6 +9,7 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.GridLabelRenderer;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
@@ -21,6 +22,9 @@ public class activity_graph_view extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph_view);
         GraphView graph = (GraphView) findViewById(R.id.graph);
+        GridLabelRenderer gridLabel = graph.getGridLabelRenderer();
+        gridLabel.setHorizontalAxisTitle("Date");
+        gridLabel.setVerticalAxisTitle("BMI");
         SharedPreferences profile = PreferenceManager.getDefaultSharedPreferences(this);
         Gson gson = new Gson();
         ArrayList<BMI_Date_Data> bmiList = new ArrayList();
@@ -41,5 +45,4 @@ public class activity_graph_view extends AppCompatActivity {
             graph.addSeries(series);
         }
     }
-
 }

@@ -71,16 +71,6 @@
         android:layout_alignLeft="@+id/checkBox2"
         android:layout_alignStart="@+id/checkBox2" />
 
-    <CheckBox
-        android:text="Finished"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBox4"
-        android:layout_below="@+id/checkBox3"
-        android:layout_alignLeft="@+id/checkBox3"
-        android:layout_alignStart="@+id/checkBox3"
-        android:layout_marginTop="84dp" />
-
     <TextView
         android:text="Daggering"
         android:layout_width="wrap_content"
@@ -211,5 +201,15 @@
         android:layout_alignTop="@+id/textView14"
         android:layout_alignRight="@+id/button11"
         android:layout_alignEnd="@+id/button11" />
+
+    <CheckBox
+        android:text="Finished"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox4"
+        android:layout_marginTop="84dp"
+        android:layout_below="@+id/checkBox3"
+        android:layout_alignLeft="@+id/checkBox3"
+        android:layout_alignStart="@+id/checkBox3" />
 
 </RelativeLayout>

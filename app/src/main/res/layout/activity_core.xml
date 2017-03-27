@@ -11,4 +11,95 @@
     tools:context="com.example.michaelcapawana.fitness.activity_core">
 
 
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="Weight"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/np3"
+        android:layout_alignEnd="@+id/np3" />
+
+    <NumberPicker
+        android:id="@+id/np3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/np"
+        android:layout_alignBottom="@+id/np"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <NumberPicker
+        android:id="@+id/np"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv"
+        android:layout_alignRight="@+id/tv"
+        android:layout_alignEnd="@+id/tv"
+        android:layout_marginTop="51dp" />
+
+    <NumberPicker
+        android:id="@+id/np2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/np"
+        android:layout_alignBottom="@+id/np"
+        android:layout_toLeftOf="@+id/np3"
+        android:layout_toStartOf="@+id/np3"
+        android:layout_marginRight="22dp"
+        android:layout_marginEnd="22dp" />
+
+    <TextView
+        android:text="Completed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:text="Finished"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox2"
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignLeft="@+id/checkBox"
+        android:layout_alignStart="@+id/checkBox" />
+
+    <TextView
+        android:text="Workout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/tv"
+        android:layout_toStartOf="@+id/tv"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="Reps"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/np3"
+        android:layout_toStartOf="@+id/np3"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="Sets"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/np2"
+        android:layout_toStartOf="@+id/np2" />
+
 </RelativeLayout>
