@@ -49,6 +49,11 @@ public class activity_goals extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    /**
+     * This function displays a user interface to ask them what goal they want to add to their todo list
+     * @param item,
+     * returns item
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -82,6 +87,11 @@ public class activity_goals extends AppCompatActivity {
         }
     }
 
+    /**
+     * clears a task from the todo list
+     * @param view
+     * no returns
+     */
     public void deleteTask(View view) {
         View parent = (View) view.getParent();
         TextView taskTextView = (TextView) parent.findViewById(R.id.task_title);
@@ -94,6 +104,10 @@ public class activity_goals extends AppCompatActivity {
         updateUI();
     }
 
+    /**
+     * this function is called by other functions to update the UI of the todo list
+     * no returns
+     */
     private void updateUI() {
         ArrayList<String> taskList = new ArrayList<>();
         SQLiteDatabase db = mHelper.getReadableDatabase();

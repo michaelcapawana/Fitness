@@ -29,12 +29,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
+    /**
+     * calls and opens the goals activity page
+     * @param  view takes the activity view so that it can start the page
+     * @return has no returns
+     */
     public void callGoals(View view) {
         Intent intent = new Intent(this, activity_goals.class);
         startActivity(intent);
     }
 
+    /**
+     * calls and opens the android calendar application
+     * @param  view takes the activity view so that it can start the page
+     * @return has no returns
+     */
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void callSchedule(View view) {
         Calendar cal = Calendar.getInstance();
@@ -47,7 +56,11 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("title", "A Test Event from android app");
         startActivity(intent);
     }
-
+    /**
+     * calls and opens the Excercise activity page
+     * @param  view takes the activity view so that it can start the page
+     * @return has no returns
+     */
     public void callExercise(View view) {
         Intent intent = new Intent(this, activity_exercise.class);
         String message = "Exercise";
@@ -55,13 +68,22 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * calls and opens the graph activity page
+     * @param  view takes the activity view so that it can start the page
+     * @return has no returns
+     */
     public void callGraphs(View view) {
         Intent intent = new Intent(this, activity_graphs.class);
         String message = "Graphs";
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
-
+    /**
+     * calls and opens the callUserInfo activity page
+     * @param  view takes the activity view so that it can start the page
+     * @return has no returns
+     */
     public void callUserInfo(View view) {
         Intent intent = new Intent(this, activity_userInfo.class);
         startActivity(intent);

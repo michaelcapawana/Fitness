@@ -1,5 +1,15 @@
 package com.example.michaelcapawana.fitness;
 
+/**
+ * Displays the graph in a line graph format.
+ * @author Grey Winert
+ * @author Preston Gagnon
+ * @author Michael Capawana
+ * @version 1.0
+ * @since 1.0
+ *
+ */
+
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;

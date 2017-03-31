@@ -1,5 +1,15 @@
 package com.example.michaelcapawana.fitness;
 
+/**
+ * Calls the android back/arms application.
+ * @author Grey Winert
+ * @author Preston Gagnon
+ * @author Michael Capawana
+ * @version 1.0
+ * @since 1.0
+ *
+ */
+
 import android.app.Activity;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -56,6 +66,7 @@ public class back extends Activity {
         np8.setMaxValue(50);
         np9.setMaxValue(100);
 
+        //Format the scroll bar to increment by 5
         NumberPicker.Formatter formatter = new NumberPicker.Formatter() {
             @Override
             public String format(int value) {
@@ -86,7 +97,6 @@ public class back extends Activity {
                 //tv.setText("Sets: " + newVal);
             }
         });
-
         np2.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal){
@@ -94,7 +104,6 @@ public class back extends Activity {
                 //tv2.setText("Reps: " + newVal);
             }
         });
-
         np3.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal){

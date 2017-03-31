@@ -36,6 +36,13 @@ public class activity_graphs extends AppCompatActivity {
         Log.d("Graphs!", "Graph");
     }
 
+    /**
+     * This function will update the user bmi. It takes the data stored on the page via the view, and it
+     * stores the data in an object, which is then placed in an array. To save the array we stringify it via
+     * Gson and then store that string in SharedPreferences.
+     * @param view,
+     * no returns
+     */
     public void BMI(View view) {
         ArrayList<BMI_Date_Data> bmiList = new ArrayList<>();
         Gson gson = new Gson();
@@ -82,6 +89,14 @@ public class activity_graphs extends AppCompatActivity {
             }
         }
 
+    /**
+     * This function takes the data from BMI() and then stores it in an object so that it can be stringified
+     * by the BMI() function
+     * @param weight
+     * @param height
+     * @param bmiList
+     * @return BMIObject
+     */
     public BMI_Date_Data storeData(long weight, long height, ArrayList<BMI_Date_Data> bmiList) {
         BMI_Date_Data BMIObject = new BMI_Date_Data();
         BMIObject.setBmi(((weight * 703) / height));
@@ -91,9 +106,12 @@ public class activity_graphs extends AppCompatActivity {
         BMIObject.setYear(rightnow.getTime().getYear());
         return BMIObject;
     }
-
+    /**
+     * this function calls the graph loader to display the BMI data
+     * @param view
+     * no returns
+     */
     public void callGraph(View view) {
-        Log.d("booty", "call");
         Intent intent = new Intent(this, activity_graph_view.class);
         startActivity(intent);
     }

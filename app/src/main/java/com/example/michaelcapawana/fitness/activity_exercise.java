@@ -23,26 +23,48 @@ public class activity_exercise extends AppCompatActivity {
         setContentView(R.layout.activity_exercise);
     }
 
+    /**
+     * calls and opens the cardio excercise page
+     * @param  view takes the activity view so that it can start the page
+     * @return has no returns
+     */
     public void callCardio(View view) {
         Intent intent = new Intent(this, cardio.class);
         startActivity(intent);
     }
 
+    /**
+     * calls and opens the core excercise page
+     * @param  view takes the activity view so that it can start the page
+     * @return has no returns
+     */
     public void callCore(View view) {
         Intent intent = new Intent(this, activity_core.class);
         startActivity(intent);
     }
-
+    /**
+     * calls and opens the chest excercise page
+     * @param  view takes the activity view so that it can start the page
+     * @return has no returns
+     */
     public void callChest(View view) {
         Intent intent = new Intent(this, chest.class);
         startActivity(intent);
     }
-
+    /**
+     * calls and opens the callback excercise page
+     * @param  view takes the activity view so that it can start the page
+     * @return has no returns
+     */
     public void callBack(View view) {
         Intent intent = new Intent(this, back.class);
         startActivity(intent);
     }
-
+    /**
+     * calls and opens the legs excercise page
+     * @param  view takes the activity view so that it can start the page
+     * @return has no returns
+     */
     public void callLegs(View view) {
         Intent intent = new Intent(this, activity_legs.class);
         startActivity(intent);

@@ -30,6 +30,13 @@ public class activity_userInfo extends AppCompatActivity {
         setContentView(R.layout.activity_user_info);
     }
 
+    /**
+     * This function opens a view that will have the text views
+     * necessary to save all the user information for the user profile
+     * It saves it all in the SharedPreferences
+     * @param view,
+     * no returns
+     */
     public void saveProfile(View view) {
         Log.d("MainActivity", "Saving Profile Information");
         EditText editText = (EditText) findViewById(R.id.editText);
@@ -37,10 +44,6 @@ public class activity_userInfo extends AppCompatActivity {
         EditText editText3 = (EditText) findViewById(R.id.editText3);
         EditText editText4 = (EditText) findViewById(R.id.editText4);
         EditText editText5 = (EditText) findViewById(R.id.editText5);
-        //if(Integer.parseInt(editText2.getText().toString()) > 120 && Integer.parseInt(editText2.getText().toString()) < 0)
-        //{
-          //  throw new AssertionError("Invalid Age");
-        //}
         Context context = activity_userInfo.this;
         SharedPreferences profile = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = profile.edit();
