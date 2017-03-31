@@ -32,4 +32,19 @@ public class activity_exercise extends AppCompatActivity {
         Intent intent = new Intent(this, activity_core.class);
         startActivity(intent);
     }
+
+    public void callChest(View view) {
+        Intent intent = new Intent(this, chest.class);
+        startActivity(intent);
+    }
+
+    public void callBack(View view) {
+        Intent intent = new Intent(this, back.class);
+        startActivity(intent);
+    }
+
+    public void callLegs(View view) {
+        Intent intent = new Intent(this, activity_legs.class);
+        startActivity(intent);
+    }
 }

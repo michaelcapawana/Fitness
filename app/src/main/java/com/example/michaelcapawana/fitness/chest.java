@@ -2,16 +2,17 @@ package com.example.michaelcapawana.fitness;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
-public class activity_core extends Activity {
+public class chest extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_core);
+        setContentView(R.layout.activity_chest);
 
         //Get the widgets reference from XML layout
         final TextView tv = (TextView) findViewById(R.id.tv);

@@ -17,7 +17,7 @@
         android:id="@+id/textView5" />
 
     <Button
-        android:text="Lungs"
+        android:text="Core"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
@@ -28,13 +28,46 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:text="GallBlader"
+        android:text="Cardio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="30dp"
         android:onClick="callCardio"
         android:id="@+id/button9"
         android:layout_below="@+id/button8"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Chest/Shoulders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="callChest"
+        android:id="@+id/button10"
+        android:layout_below="@+id/button9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+    <Button
+        android:text="Arms/Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="callBack"
+        android:id="@+id/button11"
+        android:layout_below="@+id/button10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Legs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:onClick="callLegs"
+        android:id="@+id/button12"
+        android:layout_below="@+id/button11"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 </RelativeLayout>

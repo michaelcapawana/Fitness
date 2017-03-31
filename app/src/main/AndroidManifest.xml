@@ -22,7 +22,10 @@
         <activity android:name=".activity_userInfo" />
         <activity android:name=".cardio" />
         <activity android:name=".activity_core" />
-        <activity android:name=".activity_graph_view"></activity>
+        <activity android:name=".activity_graph_view" />
+        <activity android:name=".chest" />
+        <activity android:name=".back" />
+        <activity android:name=".activity_legs"></activity>
     </application>
 
 </manifest>
